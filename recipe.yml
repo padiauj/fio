@@ -1,0 +1,26 @@
+version: 1
+
+AppDir:
+  path: ./AppDir
+
+  app_info:
+    id: fio
+    name: fio
+    version: 3.30.1
+    exec: usr/bin/fio
+    exec_args: $@
+
+  apt:
+    arch: amd64
+    sources:
+      - sourceline: 'deb http://archive.ubuntu.com/ubuntu/ focal universe'
+        key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3b4fe6acc0b21f32'
+      - sourceline: 'deb http://archive.ubuntu.com/ubuntu/ focal main'
+
+    include:
+      - fio
+
+AppImage:
+  update-information: None
+  sign-key: None
+  arch: x86_64
